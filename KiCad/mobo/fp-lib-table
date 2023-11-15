@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Buttons")(type "KiCad")(uri "/home/carvac/dev/vbox/vbox/KiCad/Buttons")(options "")(descr ""))
+)
