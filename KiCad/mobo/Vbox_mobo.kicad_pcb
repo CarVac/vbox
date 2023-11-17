@@ -2680,7 +2680,7 @@
 
   (footprint "MountingHole:MountingHole_3.2mm_M3_ISO14580_Pad_TopBottom" (layer "F.Cu")
     (tstamp dab2c860-88fa-411e-ac4a-3ae8a4b41519)
-    (at 114.554 45.72)
+    (at 114.3 45.72)
     (descr "Mounting Hole 3.2mm, M3, ISO14580")
     (tags "mounting hole 3.2mm m3 iso14580")
     (property "Sheetfile" "Vbox_mobo.kicad_sch")
