@@ -1,4 +1,5 @@
 (sym_lib_table
   (version 7)
   (lib (name "ranatadpole")(type "KiCad")(uri "/home/carvac/dev/vbox/vbox/KiCad/Buttons/ranatadpole.kicad_sym")(options "")(descr ""))
+  (lib (name "RP2040")(type "KiCad")(uri "/home/carvac/dev/vbox/vbox/KiCad/qw-footprints/qw-symbols/RP2040.kicad_sym")(options "")(descr ""))
 )
