@@ -40,7 +40,7 @@ cutout += Rot(z=-45) * Pos(0, 0, switch_ht/2) * Box(switch_wd, switch_ln, switch
 cutout = chamfer(cutout.edges().sort_by(Axis.Z)[12:24], length=0.4*MM)
 
 #chamfer for printability of x
-cutout += extrude(RegularPolygon(0.86*switch_wd*1.415, side_count=8, rotation=22.5), amount=switch_ht, taper=30)
+cutout += extrude(RegularPolygon(0.80*switch_wd*1.415, side_count=8, rotation=22.5), amount=switch_ht, taper=30)
 
 #presser for nub
 cutout -= Pos(0, 0, presser_ht) * extrude(Circle(presser_dia), amount=clearance2, taper=-45)
