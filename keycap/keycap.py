@@ -34,9 +34,13 @@ cap2 = cap - Pos(0, cap_width, sculpt_center+min_thick) * Rot(x=90) * extrude(Ci
 cap1 = fillet(cap1.edges().sort_by(Axis.Z)[-8:], radius=fillet_rad)
 cap2 = fillet(cap2.edges().sort_by(Axis.Z)[-8:], radius=fillet_rad)
 
-#cutout for switch
+#x-shaped cutout for switch
 cutout = Rot(z=45) * Pos(0, 0, switch_ht/2) * Box(switch_wd, switch_ln, switch_ht)
-cutout = chamfer(cutout.edges().sort_by(Axis.Z)[-8:-4], length=0.4*MM)
+cutout += Rot(z=-45) * Pos(0, 0, switch_ht/2) * Box(switch_wd, switch_ln, switch_ht)
+cutout = chamfer(cutout.edges().sort_by(Axis.Z)[12:24], length=0.4*MM)
+
+#chamfer for printability of x
+cutout += extrude(RegularPolygon(0.86*switch_wd*1.415, side_count=8, rotation=22.5), amount=switch_ht, taper=30)
 
 #presser for nub
 cutout -= Pos(0, 0, presser_ht) * extrude(Circle(presser_dia), amount=clearance2, taper=-45)
