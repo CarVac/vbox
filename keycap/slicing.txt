@@ -1,0 +1,13 @@
+Keycaps:
+
+0.4mm nozzle
+
+Walls
+Wall Line Count: 2
+Z seam alignment: user specified
+Z seam position: back left
+Seam corner preference: none
+
+Infill:
+Density: 20%
+Pattern: Grid
