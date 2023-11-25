@@ -94,14 +94,12 @@ You can use the motherboard with other finger clusters as long as you design the
 
 ### Left Hand Thumbs
 
-When compared to the standard right hand thumb layout, ModX is in the location of A, and ModY is in the location of CDown.
-
 1. GND
-2. Modifier 5 (optional, GPIO 10)
-3. Modifier 4 (optional, GPIO 9)
-4. Modifier 3 (optional, GPIO 8)
-5. ModY
-6. ModX
+2. Modifier 5 (optional, GPIO 10) (mirrored location of C-Stick Right)
+3. Modifier 4 (optional, GPIO 9) (mirrored location of C-Stick Up)
+4. Modifier 3 (optional, GPIO 8) (mirrored location of C-Stick Left)
+5. ModY (mirrored location of C-Stick Down)
+6. ModX (mirrored location of A)
 
 ### Right Hand Thumbs
 
