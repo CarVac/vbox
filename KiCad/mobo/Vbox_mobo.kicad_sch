@@ -3830,7 +3830,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 190.5 115.57 0) (mirror x) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
+    (in_bom no) (on_board yes) (dnp no)
     (uuid 25646628-ca9d-484b-93cf-41a5842f899b)
     (property "Reference" "J14" (at 193.04 113.03 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -4407,7 +4407,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_01x01") (at 190.5 134.62 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 509d96f1-e574-4c33-8322-84e858c517a8)
     (property "Reference" "J10" (at 193.04 133.35 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -4492,7 +4492,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 190.5 100.33 0) (mirror x) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
+    (in_bom no) (on_board yes) (dnp no)
     (uuid 584f40e9-c3a8-4ecf-bac1-8fc2834ffd1e)
     (property "Reference" "J12" (at 193.04 97.79 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -5140,7 +5140,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 213.36 100.33 0) (mirror x) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
+    (in_bom no) (on_board yes) (dnp no)
     (uuid 81a30a22-cda8-4659-9a54-4c766d4ab54d)
     (property "Reference" "J13" (at 215.9 97.79 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -5388,7 +5388,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_01x01") (at 190.5 125.73 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9fcab005-bffd-4bfc-ad39-4c2c9a93b8d5)
     (property "Reference" "J8" (at 193.04 124.46 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -6044,7 +6044,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 213.36 115.57 0) (mirror x) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
+    (in_bom no) (on_board yes) (dnp no)
     (uuid d46a4f6a-5888-4153-bb0c-5c6b777a4e05)
     (property "Reference" "J15" (at 215.9 113.03 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -6140,7 +6140,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_01x01") (at 218.44 134.62 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid dc7d7f8e-bc40-4032-9b3c-843535864614)
     (property "Reference" "J11" (at 220.98 133.35 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -6190,7 +6190,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_01x01") (at 218.44 125.73 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e7286170-3e6b-450c-bebd-ae39fe5b6f03)
     (property "Reference" "J9" (at 220.98 124.46 0)
       (effects (font (size 1.27 1.27)) (justify left))
