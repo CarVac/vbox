@@ -34,7 +34,7 @@ All of these files are posted as-is. This source is distributed WITHOUT ANY EXPR
 ## PCBs
 
 * Motherboard (with SMT assembly)
-* [QeRB](https://github.com/rana-sylvatica/rana-tadpole/tree/main/PCBs/Breakout%20Board%20(QuRB\)) (with SMT assembly) (USB-C breakout)
+* [QeRB](https://github.com/rana-sylvatica/rana-tadpole/tree/main/PCBs/Breakout%20Board%20(QuRB)) (with SMT assembly) (USB-C breakout)
 * 2x finger daughterboards (for hand assembly)
 * 2x thumb daughterboards (for hand assembly)
 
