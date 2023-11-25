@@ -120,5 +120,5 @@ When the JSTs of the button clusters are mounted on the **top side of the outer 
 
 When the JSTs of the button clusters are mounted on the **bottom side of the outer edges** of the PCBs or the **top side of the inner edges** of the PCBs, the pinout should be reversed relative to the motherboard (1 to 10 and 10 to 1 for the fingers, and 1 to 6 and 6 to 1 for the thumb clusters) and you must use "non-reversed" (they simply omit the word reversed) cable assemblies that connect pin 1 to pin N. The correct cable assemblies are listed below:
 
-* 2x A06KR06KR26E152**B** 6-pin 6" JST KR (PH-compatible) cable assembly, **non-reversed*
-* 2x A10KR10KR26E102**B** 10-pin 4" JST KR (PH-compatible) cable assembly, **non-reversed*
+* 2x A06KR06KR26E152**B** 6-pin 6" JST KR (PH-compatible) cable assembly, ***non-reversed***
+* 2x A10KR10KR26E102**B** 10-pin 4" JST KR (PH-compatible) cable assembly, ***non-reversed***
