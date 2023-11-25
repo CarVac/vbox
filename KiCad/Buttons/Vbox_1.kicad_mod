@@ -43,5 +43,6 @@
 
     (stroke (width 0.2) (type solid)) (fill none) (layer "F.CrtYd") (tstamp fd9006ca-032a-4b07-8a3b-318463372b1a))
   (pad "1" smd rect (at 3.189051 -2.481944 315) (size 2.2 1.5) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp f4261ad7-0320-4c02-8d87-8433b2cc0223))
-  (pad "2" smd rect (at -4.094149 4.801256 315) (size 2.2 1.5) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 4d76263e-2c40-4d48-abc4-0ff6dc1e3595))
+  (pad "2" smd rect (at -4.094149 4.801256 315) (size 2.2 1.5) (layers "F.Cu" "F.Paste" "F.Mask")
+    (thermal_bridge_angle 45) (thermal_gap 1) (tstamp 4d76263e-2c40-4d48-abc4-0ff6dc1e3595))
 )
