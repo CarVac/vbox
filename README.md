@@ -34,6 +34,7 @@ All of these files are posted as-is. This source is distributed WITHOUT ANY EXPR
 ## PCBs
 
 * Motherboard (with SMT assembly)
+* [QeRB](https://github.com/rana-sylvatica/rana-tadpole/tree/main/PCBs/Breakout%20Board%20(QuRB\)) (with SMT assembly) (USB-C breakout)
 * 2x finger daughterboards (for hand assembly)
 * 2x thumb daughterboards (for hand assembly)
 
@@ -44,6 +45,7 @@ All of these files are posted as-is. This source is distributed WITHOUT ANY EXPR
 * 2x S10B-PH-SM4-TB 10-pin right-angle surface-mount JST PH
 * 2x A06KR06KR26E152A 6-pin 6" JST KR (PH-compatible) cable assembly, reversed
 * 2x A10KR10KR26E102A 10-pin 4" JST KR (PH-compatible) cable assembly, reversed
+* 1x 12-pin 0.5mm pitch ribbon cable, Xmm long
 
 ## Printed Parts
 
