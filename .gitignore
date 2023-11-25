@@ -1,3 +1,4 @@
 *backups*
 *.swp
 *.gcode
+*.lck
