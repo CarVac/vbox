@@ -42,8 +42,8 @@ All of these files are posted as-is. This source is distributed WITHOUT ANY EXPR
 * 20x (or more) Omron D2LS-21(20M) mouse switches
 * 2x S6B-PH-SM4-TB 6-pin right-angle surface-mount JST PH
 * 2x S10B-PH-SM4-TB 10-pin right-angle surface-mount JST PH
-* 2x A06KR06KR26E152A 6-pin 6" JST KR (PH-compatible) cable assembly
-* 2x A10KR10KR26E102A 10-pin 4" JST KR (PH-compatible) cable assembly
+* 2x A06KR06KR26E152A 6-pin 6" JST KR (PH-compatible) cable assembly, reversed
+* 2x A10KR10KR26E102A 10-pin 4" JST KR (PH-compatible) cable assembly, reversed
 
 ## Printed Parts
 
@@ -59,3 +59,66 @@ Print as many keycaps as necessary.
 * 3x (or more) Tall Keycaps
 
 Housing TBD; there may be a non-folding version and a folding version.
+
+# Using the Motherboard with Other Button Clusters
+
+You can use the motherboard with other finger clusters as long as you design them properly. The motherboard JST pinout is listed following, according to standard OpenFrame1 button locations.
+
+## Pinout
+
+### Left Hand Fingers
+
+1. GND
+2. Upper Row Index Finger (optional, GPIO 11)
+3. Upper Row Ring Finger (optional, GPIO 23)
+4. Upper Row Pinky Finger (optional, GPIO 25)
+5. L
+6. Analog Stick Left
+7. Analog Stick Down
+8. Analog Stick Right
+9. Upper Row Middle Finger (optional, GPIO 1)
+10. Start
+
+### Right Hand Fingers
+
+1. GND
+2. Right Hand Start (optional, GPIO 29)
+3. R
+4. B
+5. Y
+6. X
+7. Lightshield
+8. Z
+9. Midshield
+10. Analog Stick Up
+
+### Left Hand Thumbs
+
+When compared to the standard right hand thumb layout, ModX is in the location of A, and ModY is in the location of CDown.
+
+1. GND
+2. Modifier 5 (optional, GPIO 10)
+3. Modifier 4 (optional, GPIO 9)
+4. Modifier 3 (optional, GPIO 8)
+5. ModY
+6. ModX
+
+### Right Hand Thumbs
+
+1. GND
+2. C-Stick Right
+3. C-Stick Down
+4. A
+5. C-Stick Left
+6. C-Stick Up
+
+## Modifications
+
+You may use as many or as few buttons as you would like, but keep in mind that if you are intending this for melee you should at least populate the standard 20 OpenFrame1 buttons.
+
+When the JSTs of the button clusters are mounted on the **top side of the outer edges** of the PCBs (as in the reference design) or the **bottom side of the inner edges** of the PCBs, the pinout should be the same as on the motherboard, and you must use "reversed" cable assemblies which map pin 1 to pin 1 and pin N to pin N.
+
+When the JSTs of the button clusters are mounted on the **bottom side of the outer edges** of the PCBs or the **top side of the inner edges** of the PCBs, the pinout should be reversed relative to the motherboard (1 to 10 and 10 to 1 for the fingers, and 1 to 6 and 6 to 1 for the thumb clusters) and you must use "non-reversed" (they simply omit the word reversed) cable assemblies that connect pin 1 to pin N. The correct cable assemblies are listed below:
+
+* 2x A06KR06KR26E152**B** 6-pin 6" JST KR (PH-compatible) cable assembly, **non-reversed*
+* 2x A10KR10KR26E102**B** 10-pin 4" JST KR (PH-compatible) cable assembly, **non-reversed*
