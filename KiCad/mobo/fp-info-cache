@@ -1,4 +1,4 @@
-21889639654911734
+21901524366984570
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -2304,6 +2304,13 @@ RanaTadpole
 3
 Buttons
 Vbox
+
+
+0
+2
+2
+Buttons
+Vbox_1
 
 
 0
@@ -90341,3 +90348,45 @@ varistor
 0
 2
 2
+qw-footprints
+CUSTOM D_SOD-123
+SOD-123
+SOD-123
+0
+2
+2
+qw-footprints
+CustomE73-2G4M08S1C-52840
+
+
+0
+43
+43
+qw-footprints
+CustomTP4056
+SOP, 8 Pin (https://ww2.minicircuits.com/case_style/XX112.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOP SO
+0
+13
+9
+qw-footprints
+RP2040-QFN-56
+QFN, 56 Pin (http://www.cypress.com/file/416486/download#page=40), generated with kicad-footprint-generator ipc_dfn_qfn_generator.py
+QFN DFN_QFN
+0
+70
+57
+qw-footprints
+SKRRAXE010
+
+
+0
+4
+4
+qw-footprints
+TYPE-C_24P_QCHT
+USB TYPE C, RA RCPT PCB, Hybrid, https://www.amphenolcanada.com/StockAvailabilityPrice.aspx?From=&PartNum=12401548E4%7e2A
+USB C Type-C Receptacle Hybrid
+0
+28
+25
