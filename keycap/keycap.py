@@ -46,20 +46,70 @@ cutout += extrude(RegularPolygon(0.80*switch_wd*1.415, side_count=8, rotation=22
 cutout -= Pos(0, 0, presser_ht) * extrude(Circle(presser_dia), amount=clearance2, taper=-45)
 
 #test surround
+unit = 19*MM
 cap_width_plus = cap_width + 0.6*MM
 wing_ht_clearance = 1.6 * MM + 3*MM - presser_ht
 wing_length_clearance = cap_width_plus+2*MM
 wing_width_clearance = cap_width_plus-2*MM
 surround_ht = wing_ht_clearance*2
 surround_wd = 19*2*MM - cap_width_plus
+button_frame_wd = 20 * MM
+pcb_hole_wd = 18 * MM
+pcb_thick = 1.6 * MM
 
-surround = Pos(0, 0, surround_ht/2) * Box(surround_wd, surround_wd, surround_ht)
-surround -= Pos(0, 0, surround_ht/2) * Box(cap_width_plus, cap_width_plus, surround_ht)
-surround -= Pos(0, 0, wing_ht_clearance/2) * Box(wing_length_clearance, wing_width_clearance, wing_ht_clearance)
+cap_hole = Pos(0, 0, surround_ht/2) * Box(cap_width_plus, cap_width_plus, surround_ht)
+cap_hole += Pos(0, 0, wing_ht_clearance/2) * Box(wing_width_clearance, wing_length_clearance, wing_ht_clearance)
+button_frame = Pos(0, 0, surround_ht/2-pcb_thick/2) * Box(button_frame_wd, button_frame_wd, surround_ht+pcb_thick)
+pcb_hole = Pos(0, 0, -pcb_thick) * Box(pcb_hole_wd, pcb_hole_wd, pcb_thick*2)
+
+#frame
+leftthumb  = Pos(0.0*unit,  0.0*unit, 0) * button_frame
+leftthumb += Pos(0.0*unit, -0.5*unit, 0) * button_frame
+leftthumb += Pos(1.0*unit,  0.5*unit, 0) * button_frame
+leftthumb += Pos(1.0*unit, -0.5*unit, 0) * button_frame
+leftthumb += Pos(2.0*unit,  0.0*unit, 0) * button_frame
+leftthumb += Pos(2.0*unit, -1.0*unit, 0) * button_frame
+#round corners
+leftthumb = fillet(leftthumb.edges().sort_by(Axis.Z)[12:20], radius=fillet_rad)
+#centered holes for pcb
+leftthumb -= Pos(0.0*unit,  0.0*unit, 0) * pcb_hole
+leftthumb -= Pos(0.0*unit, -0.5*unit, 0) * pcb_hole
+leftthumb -= Pos(1.0*unit,  0.5*unit, 0) * pcb_hole
+leftthumb -= Pos(1.0*unit, -0.5*unit, 0) * pcb_hole
+leftthumb -= Pos(2.0*unit,  0.0*unit, 0) * pcb_hole
+leftthumb -= Pos(2.0*unit, -1.0*unit, 0) * pcb_hole
+#clearing the ribs
+leftthumb -= Pos(0.1*unit,  0.0*unit, 0) * pcb_hole
+leftthumb -= Pos(0.1*unit, -0.5*unit, 0) * pcb_hole
+leftthumb -= Pos(1.0*unit,  0.4*unit, 0) * pcb_hole
+leftthumb -= Pos(1.1*unit, -0.5*unit, 0) * pcb_hole
+leftthumb -= Pos(1.9*unit,  0.0*unit, 0) * pcb_hole
+leftthumb -= Pos(2.0*unit, -0.9*unit, 0) * pcb_hole
+#slot for the connector protrusion
+leftthumb -= Pos(-0.5*unit, (2.5-18.5)/2, -pcb_thick) * Box(unit, 21*MM, pcb_thick*2)
+#mirror for the right thumb
+rightthumb = mirror(leftthumb, Plane.YZ)
+
+
+#EDIT THESE TO REMOVE BUTTON HOLES
+#holes for left thumb
+leftthumb -= Pos(0.0*unit,  0.0*unit, 0) * cap_hole # mod5
+leftthumb -= Pos(1.0*unit,  0.5*unit, 0) * cap_hole # mod4
+leftthumb -= Pos(1.0*unit, -0.5*unit, 0) * cap_hole # modX
+leftthumb -= Pos(2.0*unit,  0.0*unit, 0) * cap_hole # mod3
+leftthumb -= Pos(2.0*unit, -1.0*unit, 0) * cap_hole # modY
+#holes for right thumb
+rightthumb -= Pos(-0.0*unit,  0.0*unit, 0) * cap_hole # c_right
+rightthumb -= Pos(-1.0*unit,  0.5*unit, 0) * cap_hole # c_up
+rightthumb -= Pos(-1.0*unit, -0.5*unit, 0) * cap_hole # A
+rightthumb -= Pos(-2.0*unit,  0.0*unit, 0) * cap_hole # c_left
+rightthumb -= Pos(-2.0*unit, -1.0*unit, 0) * cap_hole # c_down
 
 cap1 -= cutout;
 cap2 -= cutout;
 
 cap1.export_stl("short_cap.stl")
 cap2.export_stl("tall_cap.stl")
-surround.export_stl("surround.stl")
+leftthumb.export_stl("leftthumb.stl")
+rightthumb.export_stl("rightthumb.stl")
+
