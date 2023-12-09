@@ -89,7 +89,7 @@ leftthumb -= Pos(1.1*unit, -0.5*unit, 0) * pcb_hole
 leftthumb -= Pos(1.9*unit,  0.0*unit, 0) * pcb_hole
 leftthumb -= Pos(2.0*unit, -0.9*unit, 0) * pcb_hole
 #slot for the connector protrusion
-leftthumb -= Pos(-0.5*unit, (2.5-18.5)/2*MM, -pcb_thick) * Box(unit, 21*MM, pcb_thick*2)
+leftthumb -= Pos(-0.5*unit, (2.75-18.5)/2*MM, -pcb_thick) * Box(unit, (2.75+18.5)*MM, pcb_thick*2)
 #mirror for the right thumb
 rightthumb = mirror(leftthumb, Plane.YZ)
 
@@ -138,7 +138,7 @@ leftfinger -= Pos(3.0*unit,      -1.0*unit, 0) * pcb_hole
 leftfinger -= Pos(3.5*unit,           8*MM, 0) * pcb_hole
 leftfinger -= Pos(4.0*unit+4*MM,      8*MM, 0) * pcb_hole
 #slot for the connector protrusion
-leftfinger -= Pos(-0.5*unit, (6.5-22.5)/2*MM, -pcb_thick) * Box(unit, (6.5+22.5)*MM, pcb_thick*2)
+leftfinger -= Pos(-0.5*unit, (6.75-22.75)/2*MM, -pcb_thick) * Box(unit, (6.75+22.75)*MM, pcb_thick*2)
 #mirror for the right fingers
 rightfinger = mirror(leftfinger, Plane.YZ)
 
