@@ -45,6 +45,9 @@ cutout += extrude(RegularPolygon(0.80*switch_wd*1.415, side_count=8, rotation=22
 #presser for nub
 cutout -= Pos(0, 0, presser_ht) * extrude(Circle(presser_dia), amount=clearance2, taper=-45)
 
+cap1 -= cutout;
+cap2 -= cutout;
+
 #test surround
 unit = 19*MM
 cap_width_plus = cap_width + 0.6*MM
@@ -173,9 +176,6 @@ rightfinger -= Pos(-2.0*unit     ,    -11*MM, 0) * cap_hole # X
 rightfinger -= Pos(-3.0*unit     ,  0.0*unit, 0) * cap_hole # R
 rightfinger -= Pos(-3.0*unit     , -1.0*unit, 0) * cap_hole # B
 rightfinger -= Pos(-4.0*unit-4*MM,      8*MM, 0) * cap_hole #        (optional) start2
-
-cap1 -= cutout;
-cap2 -= cutout;
 
 cap1.export_stl("short_cap.stl")
 cap2.export_stl("tall_cap.stl")

@@ -1,5 +1,9 @@
 # vbox
 
+![Overview of pcb and hand clusters](/Pictures/overview.jpg)
+
+![Angled view of hand clusters](/Pictures/angleview.jpg)
+
 A rectangle controller for Melee with buttons arranged vertically instead of on a flat surface.
 
 It's intended to be highly modular and configurable.
@@ -10,7 +14,8 @@ The switches will be Omron D2LS-21(20M), which are easy to hand-solder. A SMD co
 
 Any switch can be omitted if desired, and the housing printed with a cap over where it would go.
 
-The motherboard will be as narrow as possible, with 4 connectors for button cluster daughterboards and one further connector for the USB-C breakout board.
+The motherboard is as narrow as possible, with 4 connectors for button cluster daughterboards and one further connector for the USB-C breakout board.
+
 It is derived from the [Rana Labs Tadpole](https://github.com/rana-sylvatica/rana-tadpole) motherboard but with extremely heavy layout changes.
 
 # License
@@ -49,7 +54,7 @@ All of these files are posted as-is. This source is distributed WITHOUT ANY EXPR
 
 ## Printed Parts
 
-The housings may be customized to include or omit different button locations.
+The housings may be customized to include or omit different button locations. Adjust the python file (which uses Build123D) where it says `EDIT THESE TO REMOVE BUTTON HOLES` and run the file to generate new STLs.
 
 Print as many keycaps as necessary.
 
