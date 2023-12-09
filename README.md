@@ -6,15 +6,15 @@
 
 A rectangle controller for Melee with buttons arranged vertically instead of on a flat surface.
 
-It's intended to be highly modular and configurable.
+It's intended to be highly modular and configurable to fit different people's button layout preferences and hand sizes.
 
-The finger clusters and the thumb clusters will be mirror images of each other, with shared daughterboard PCBs, each side having single-sided layouts.
+The left- and right-hand finger clusters and thumb clusters are mirror images of each other, with shared daughterboard PCBs, each side having single-sided layouts.
 
-The switches will be Omron D2LS-21(20M), which are easy to hand-solder. A SMD connector will be chosen to be simple to hand-solder.
+The switches used are Omron D2LS-21(20M), which are easy to hand-solder. The SMD JST PH connector was chosen for its low profile and ease of hand soldering.
 
-Any switch can be omitted if desired, and the housing printed with a cap over where it would go.
+Any switch location can be omitted if desired, and the housing printed with a blank where it would go.
 
-The motherboard is as narrow as possible, with 4 connectors for button cluster daughterboards and one further connector for the USB-C breakout board.
+The motherboard is designed to be as narrow as possible, with 4 JST connectors for button cluster daughterboards and one FFC connector for the USB-C breakout board.
 
 It is derived from the [Rana Labs Tadpole](https://github.com/rana-sylvatica/rana-tadpole) motherboard but with extremely heavy layout changes.
 
