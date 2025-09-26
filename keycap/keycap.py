@@ -45,6 +45,9 @@ cutout += extrude(RegularPolygon(0.80*switch_wd*1.415, side_count=8, rotation=22
 #presser for nub
 cutout -= Pos(0, 0, presser_ht) * extrude(Circle(presser_dia), amount=clearance2, taper=-45)
 
+cap1 -= cutout;
+cap2 -= cutout;
+
 #test surround
 unit = 19*MM
 cap_width_plus = cap_width + 0.6*MM
@@ -60,7 +63,8 @@ pcb_thick = 1.6 * MM
 cap_hole = Pos(0, 0, surround_ht/2) * Box(cap_width_plus, cap_width_plus, surround_ht)
 cap_hole += Pos(0, 0, wing_ht_clearance/2) * Box(wing_width_clearance, wing_length_clearance, wing_ht_clearance)
 button_frame = Pos(0, 0, surround_ht/2-pcb_thick/2) * Box(button_frame_wd, button_frame_wd, surround_ht+pcb_thick)
-pcb_hole = Pos(0, 0, -pcb_thick) * Box(pcb_hole_wd, pcb_hole_wd, pcb_thick*2)
+pcb_hole = Pos(0, 0, -pcb_thick) * Box(pcb_hole_wd+.2, pcb_hole_wd, pcb_thick*2)
+#                                                   ^ make the hole a bit wider so that the press fit is only vertical
 
 #frame for thumbs
 leftthumb  = Pos(0.0*unit,  0.0*unit, 0) * button_frame
@@ -86,17 +90,34 @@ leftthumb -= Pos(1.1*unit, -0.5*unit, 0) * pcb_hole
 leftthumb -= Pos(1.9*unit,  0.0*unit, 0) * pcb_hole
 leftthumb -= Pos(2.0*unit, -0.9*unit, 0) * pcb_hole
 #slot for the connector protrusion
-leftthumb -= Pos(-0.5*unit, (2.5-18.5)/2*MM, -pcb_thick) * Box(unit, 21*MM, pcb_thick*2)
+leftthumb -= Pos(-0.5*unit, (2.75-18.5)/2*MM, -pcb_thick) * Box(unit, (2.75+18.5)*MM, pcb_thick*2)
 #mirror for the right thumb
 rightthumb = mirror(leftthumb, Plane.YZ)
 
 #frame for fingers
+<<<<<<< HEAD
 leftfinger  = Pos(0.0*unit,      -1.0*unit, 0) * button_frame
 leftfinger += Pos(0.0*unit,      -2.0*unit, 0) * button_frame
 leftfinger += Pos(1.0*unit,       0.0*unit, 0) * button_frame
 leftfinger += Pos(1.0*unit,      -1.0*unit, 0) * button_frame
 leftfinger += Pos(2.0*unit,           6*MM, 0) * button_frame
 leftfinger += Pos(2.0*unit,         -13*MM, 0) * button_frame
+||||||| 697a953
+leftfinger  = Pos(0.0*unit,       0.0*unit, 0) * button_frame
+leftfinger += Pos(0.0*unit,      -1.0*unit, 0) * button_frame
+leftfinger += Pos(1.0*unit,           8*MM, 0) * button_frame
+leftfinger += Pos(1.0*unit,         -11*MM, 0) * button_frame
+leftfinger += Pos(2.0*unit,           8*MM, 0) * button_frame
+leftfinger += Pos(2.0*unit,         -11*MM, 0) * button_frame
+leftfinger += Pos(3.0*unit,           8*MM, 0) * button_frame #extra fill
+=======
+leftfinger  = Pos(0.0*unit,       0.0*unit, 0) * button_frame
+leftfinger += Pos(0.0*unit,      -1.0*unit, 0) * button_frame
+leftfinger += Pos(1.0*unit,           8*MM, 0) * button_frame
+leftfinger += Pos(1.0*unit,         -11*MM, 0) * button_frame
+leftfinger += Pos(2.0*unit,           8*MM, 0) * button_frame
+leftfinger += Pos(2.0*unit,         -11*MM, 0) * button_frame
+>>>>>>> f6705c804994893885bdc641738aba0555ac35ca
 leftfinger += Pos(3.0*unit,       0.0*unit, 0) * button_frame
 leftfinger += Pos(3.0*unit,      -1.0*unit, 0) * button_frame
 leftfinger += Pos(3.5*unit,       0.0*unit, 0) * button_frame #extra fill
@@ -105,11 +126,24 @@ leftfinger += Pos(4.0*unit+4*MM,  0.0*unit, 0) * button_frame
 leftfinger = fillet(leftfinger.edges().sort_by(Axis.Z)[18:36], radius=fillet_rad)
 #centered holes for pcb
 leftfinger -= Pos(0.0*unit,      -1.0*unit, 0) * pcb_hole
+<<<<<<< HEAD
 leftfinger -= Pos(0.0*unit,      -2.0*unit, 0) * pcb_hole
 leftfinger -= Pos(1.0*unit,       0.0*unit, 0) * pcb_hole
 leftfinger -= Pos(1.0*unit,      -1.0*unit, 0) * pcb_hole
 leftfinger -= Pos(2.0*unit,           6*MM, 0) * pcb_hole
 leftfinger -= Pos(2.0*unit,         -13*MM, 0) * pcb_hole
+||||||| 697a953
+leftfinger -= Pos(1.0*unit,           8*MM, 0) * pcb_hole
+leftfinger -= Pos(1.0*unit,         -11*MM, 0) * pcb_hole
+leftfinger -= Pos(2.0*unit,           8*MM, 0) * pcb_hole
+leftfinger -= Pos(2.0*unit,         -11*MM, 0) * pcb_hole
+leftfinger -= Pos(3.0*unit,           8*MM, 0) * pcb_hole
+=======
+leftfinger -= Pos(1.0*unit,           8*MM, 0) * pcb_hole
+leftfinger -= Pos(1.0*unit,         -11*MM, 0) * pcb_hole
+leftfinger -= Pos(2.0*unit,           8*MM, 0) * pcb_hole
+leftfinger -= Pos(2.0*unit,         -11*MM, 0) * pcb_hole
+>>>>>>> f6705c804994893885bdc641738aba0555ac35ca
 leftfinger -= Pos(3.0*unit,       0.0*unit, 0) * pcb_hole
 leftfinger -= Pos(3.0*unit,      -1.0*unit, 0) * pcb_hole
 leftfinger -= Pos(3.5*unit,       0.0*unit, 0) * pcb_hole
@@ -123,12 +157,34 @@ leftfinger -= Pos(1.1*unit,       0.0*unit, 0) * pcb_hole
 leftfinger -= Pos(1.1*unit,         -13*MM, 0) * pcb_hole
 leftfinger -= Pos(2.0*unit,       0.0*unit, 0) * pcb_hole
 leftfinger -= Pos(2.1*unit,       0.0*unit, 0) * pcb_hole
+<<<<<<< HEAD
 leftfinger -= Pos(2.1*unit,         -13*MM, 0) * pcb_hole
+||||||| 697a953
+leftfinger -= Pos(2.1*unit,           8*MM, 0) * pcb_hole
+leftfinger -= Pos(2.1*unit,         -11*MM, 0) * pcb_hole
+leftfinger -= Pos(3.0*unit,           8*MM, 0) * pcb_hole
+=======
+leftfinger -= Pos(2.1*unit,         -11*MM, 0) * pcb_hole
+>>>>>>> f6705c804994893885bdc641738aba0555ac35ca
 leftfinger -= Pos(3.0*unit,       0.0*unit, 0) * pcb_hole
 leftfinger -= Pos(3.0*unit,      -0.1*unit, 0) * pcb_hole
 leftfinger -= Pos(3.0*unit,      -1.0*unit, 0) * pcb_hole
+<<<<<<< HEAD
+||||||| 697a953
+leftfinger -= Pos(3.5*unit,           8*MM, 0) * pcb_hole
+leftfinger -= Pos(4.0*unit+4*MM,      8*MM, 0) * pcb_hole
+=======
+leftfinger -= Pos(3.5*unit,       0.0*unit, 0) * pcb_hole
+leftfinger -= Pos(4.0*unit+4*MM,  0.0*unit, 0) * pcb_hole
+>>>>>>> f6705c804994893885bdc641738aba0555ac35ca
 #slot for the connector protrusion
+<<<<<<< HEAD
 leftfinger -= Pos(-0.5*unit, -19*MM + (6.5-22.5)/2*MM, -pcb_thick) * Box(unit, (6.5+22.5)*MM, pcb_thick*2)
+||||||| 697a953
+leftfinger -= Pos(-0.5*unit, (6.5-22.5)/2*MM, -pcb_thick) * Box(unit, (6.5+22.5)*MM, pcb_thick*2)
+=======
+leftfinger -= Pos(-0.5*unit, (6.75-22.75)/2*MM, -pcb_thick) * Box(unit, (6.75+22.75)*MM, pcb_thick*2)
+>>>>>>> f6705c804994893885bdc641738aba0555ac35ca
 #mirror for the right fingers
 rightfinger = mirror(leftfinger, Plane.YZ)
 
@@ -165,10 +221,19 @@ rightfinger -= Pos(-2.0*unit     ,      6*MM, 0) * cap_hole # Y
 rightfinger -= Pos(-2.0*unit     ,    -13*MM, 0) * cap_hole # X
 rightfinger -= Pos(-3.0*unit     ,  0.0*unit, 0) * cap_hole # R
 rightfinger -= Pos(-3.0*unit     , -1.0*unit, 0) * cap_hole # B
+<<<<<<< HEAD
 #rightfinger -= Pos(-4.0*unit-4*MM,  0.0*unit, 0) * cap_hole #        (optional) start2
 
 cap1 -= cutout;
 cap2 -= cutout;
+||||||| 697a953
+rightfinger -= Pos(-4.0*unit-4*MM,      8*MM, 0) * cap_hole #        (optional) start2
+
+cap1 -= cutout;
+cap2 -= cutout;
+=======
+rightfinger -= Pos(-4.0*unit-4*MM,  0.0*unit, 0) * cap_hole #        (optional) start2
+>>>>>>> f6705c804994893885bdc641738aba0555ac35ca
 
 cap1.export_stl("short_cap.stl")
 cap2.export_stl("tall_cap.stl")
