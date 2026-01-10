@@ -141,7 +141,8 @@ leftfingerpcb += Pos(4.0*unit+4*MM,  0.0*unit, 0) * (pcb_hole + pcb_dogbone_topr
 #clearing the ribs
 leftfingerpcb += Pos(0.1*unit,         -14*MM, 0) * pcb_hole
 leftfingerpcb += Pos(0.0*unit,         -30*MM, 0) * pcb_hole
-leftfingerpcb += Pos(0.9*unit,       0.0*unit, 0) * pcb_hole
+leftfingerpcb += Pos(0.9*unit,         -14*MM, 0) * pcb_hole
+leftfingerpcb += Pos(0.9*unit,      -1.0*unit, 0) * pcb_hole
 leftfingerpcb += Pos(1.0*unit,       0.0*unit, 0) * pcb_hole
 leftfingerpcb += Pos(1.0*unit,      -0.1*unit, 0) * pcb_hole
 leftfingerpcb += Pos(1.1*unit,       0.0*unit, 0) * pcb_hole
@@ -155,7 +156,7 @@ leftfingerpcb += Pos(3.0*unit,      -1.0*unit, 0) * pcb_hole
 #slot for the connector protrusion
 leftfingerpcb += Pos(-0.5*unit, -19*MM + (6.5-22.5)/2*MM, -pcb_thick) * Box(unit, (6.5+22.5)*MM, pcb_thick*2)
 #fillet the inside corners
-leftfingerpcb = fillet(leftfingerpcb.edges().filter_by(Axis.Z), radius=1.5*MM)
+leftfingerpcb = fillet(leftfingerpcb.edges().filter_by(Axis.Z), radius=1.4*MM)
 
 leftfinger -= leftfingerpcb
 #mirror for the right fingers
