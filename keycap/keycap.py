@@ -70,7 +70,9 @@ pcb_hole_wd = 18 * MM
 pcb_thick = 1.6 * MM
 
 cap_hole = Pos(0, 0, surround_ht/2) * Box(cap_width_plus, cap_width_plus, surround_ht)
-cap_hole += Pos(0, 0, wing_ht_clearance/2) * Box(wing_width_clearance, wing_length_clearance, wing_ht_clearance)
+wing_hole = Pos(0, 0, wing_ht_clearance/2) * Box(wing_width_clearance, wing_length_clearance, wing_ht_clearance)
+wing_hole = chamfer(wing_hole.edges().filter_by(Axis.Z), length=0.75*MM)
+cap_hole += wing_hole
 button_frame = Pos(0, 0, surround_ht/2-pcb_thick/2) * Box(button_frame_wd, button_frame_wd, surround_ht+pcb_thick)
 pcb_hole = Pos(0, 0, -pcb_thick) * Box(pcb_hole_wd+.2, pcb_hole_wd, pcb_thick*2)
 #                                                   ^ make the hole a bit wider so that the press fit is only vertical
@@ -141,7 +143,8 @@ leftfingerpcb += Pos(4.0*unit+4*MM,  0.0*unit, 0) * (pcb_hole + pcb_dogbone_topr
 #clearing the ribs
 leftfingerpcb += Pos(0.1*unit,         -14*MM, 0) * pcb_hole
 leftfingerpcb += Pos(0.0*unit,         -30*MM, 0) * pcb_hole
-leftfingerpcb += Pos(0.9*unit,       0.0*unit, 0) * pcb_hole
+leftfingerpcb += Pos(0.9*unit,         -14*MM, 0) * pcb_hole
+leftfingerpcb += Pos(0.9*unit,      -1.0*unit, 0) * pcb_hole
 leftfingerpcb += Pos(1.0*unit,       0.0*unit, 0) * pcb_hole
 leftfingerpcb += Pos(1.0*unit,      -0.1*unit, 0) * pcb_hole
 leftfingerpcb += Pos(1.1*unit,       0.0*unit, 0) * pcb_hole
@@ -155,7 +158,7 @@ leftfingerpcb += Pos(3.0*unit,      -1.0*unit, 0) * pcb_hole
 #slot for the connector protrusion
 leftfingerpcb += Pos(-0.5*unit, -19*MM + (6.5-22.5)/2*MM, -pcb_thick) * Box(unit, (6.5+22.5)*MM, pcb_thick*2)
 #fillet the inside corners
-leftfingerpcb = fillet(leftfingerpcb.edges().filter_by(Axis.Z), radius=1.5*MM)
+leftfingerpcb = fillet(leftfingerpcb.edges().filter_by(Axis.Z), radius=1.4*MM)
 
 leftfinger -= leftfingerpcb
 #mirror for the right fingers
@@ -164,10 +167,10 @@ rightfinger = mirror(leftfinger, Plane.YZ)
 
 #EDIT THESE TO REMOVE BUTTON HOLES
 #holes for left thumb
-#leftthumb -= Pos(0.0*unit,  0.0*unit, 0) * cap_hole #         (optional) mod5
-#leftthumb -= Pos(1.0*unit,  0.5*unit, 0) * cap_hole #         (optional) mod4
+leftthumb -= Pos(0.0*unit,  0.0*unit, 0) * cap_hole #         (optional) mod5
+leftthumb -= Pos(1.0*unit,  0.5*unit, 0) * cap_hole #         (optional) mod4
 leftthumb -= Pos(1.0*unit, -0.5*unit, 0) * cap_hole # modX
-#leftthumb -= Pos(2.0*unit,  0.0*unit, 0) * cap_hole #         (optional) mod3
+leftthumb -= Pos(2.0*unit,  0.0*unit, 0) * cap_hole #         (optional) mod3
 leftthumb -= Pos(2.0*unit, -1.0*unit, 0) * cap_hole # modY
 #holes for right thumb
 rightthumb -= Pos(-0.0*unit,  0.0*unit, 0) * cap_hole # c_right
@@ -180,7 +183,7 @@ rightthumb -= Pos(-2.0*unit, -1.0*unit, 0) * cap_hole # c_down
 leftfinger -= Pos(0.0*unit     ,    -33*MM, 0) * cap_hole # L
 #leftfinger -= Pos(1.0*unit     ,  0.0*unit, 0) * cap_hole #       (optional) upper ring
 leftfinger -= Pos(1.0*unit     , -1.0*unit, 0) * cap_hole # left
-leftfinger -= Pos(2.0*unit     ,      4*MM, 0) * cap_hole #       (optional) up2
+#leftfinger -= Pos(2.0*unit     ,      4*MM, 0) * cap_hole #       (optional) up2
 leftfinger -= Pos(2.0*unit     ,    -15*MM, 0) * cap_hole # down
 #leftfinger -= Pos(3.0*unit     ,  0.0*unit, 0) * cap_hole #       (optional) upper index
 leftfinger -= Pos(3.0*unit     , -1.0*unit, 0) * cap_hole # right
@@ -196,10 +199,10 @@ rightfinger -= Pos(-3.0*unit     ,  0.0*unit, 0) * cap_hole # R
 rightfinger -= Pos(-3.0*unit     , -1.0*unit, 0) * cap_hole # B
 #rightfinger -= Pos(-4.0*unit-4*MM,  0.0*unit, 0) * cap_hole #        (optional) start2
 
-cap1.export_step("short_cap.step")
-cap2.export_step("tall_cap.step")
-leftthumb.export_step("leftthumb.step")
-rightthumb.export_step("rightthumb.step")
-leftfinger.export_step("leftfinger.step")
-rightfinger.export_step("rightfinger.step")
+cap1.export_step("cap_short.step")
+cap2.export_step("cap_tall.step")
+leftthumb.export_step("module_thumb_left.step")
+rightthumb.export_step("module_thumb_right.step")
+leftfinger.export_step("module_finger_left.step")
+rightfinger.export_step("module_finger_right.step")
 
